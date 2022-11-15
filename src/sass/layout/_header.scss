@@ -1,0 +1,23 @@
+@use '../abstracts/' as *;
+
+header {
+  width: 100%;
+  font-weight: $fw-bold;
+  background-color: var(--clr-topbg);
+  padding-block: 2rem 4rem;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+
+h1 {
+  font-size: $fs-header;
+}
+
+.container > .subheader {
+  color: var(--clr-headers);
+}
+
+hr {
+  margin-block: 1rem;
+  color: var(--clr-headers);
+}

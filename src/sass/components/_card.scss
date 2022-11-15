@@ -1,0 +1,134 @@
+@use '../abstracts' as *;
+
+.card {
+  background-color: var(--clr-card-bg);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 14rem;
+  padding-block: 2rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    height: .25rem;
+    width: 100%;
+    background-color: var(--clr-border-top);
+  }
+}
+.card:nth-child(1) {
+  --clr-border-top: #{$clr-primary-facebook};
+}
+.card:nth-child(2) {
+  --clr-border-top: #{$clr-primary-twitter};
+}
+.card:nth-child(3) {
+  &::before {
+    background-image: $gradient-primary-instagram;
+  }
+}
+.card:nth-child(4) {
+  --clr-border-top: #{$clr-primary-youtube};
+}
+
+.card__heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.follower__inner:nth-child(1) {
+  font-size: 3rem;
+  font-weight: $fw-bold;
+}
+.follower__inner:nth-child(2) {
+  letter-spacing: .125rem;
+  color: var(--clr-headers);
+}
+
+.card__daily {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .25rem;
+}
+.positive {
+  color: $clr-primary-limegreen;
+}
+.negative {
+  color: $clr-primary-brightred;
+}
+
+.overview-card {
+  background-color: var(--clr-card-bg);
+  border-radius: .5rem;
+  height: 8rem;
+  padding: 1rem;
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-areas:
+  "one two"
+  "three four";
+  row-gap: 1rem;
+  position: relative;
+}
+.ov-grid-item__inner:nth-child(1) {
+  grid-area: one;
+  color: var(--clr-headers);
+  font-weight: bold;
+}
+.ov-grid-item__inner:nth-child(2) {
+  grid-area: two;
+  margin-left: auto;
+}
+.ov-grid-item__inner:nth-child(3) {
+  grid-area: three;
+  font-size: $fs-header;
+  font-weight: $fw-bold;
+}
+.ov-grid-item__inner:nth-child(4) {
+  grid-area: four;
+}
+
+/* Hover effects */
+.card, .overview-card:hover {
+  cursor: pointer;
+}
+
+.card:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-hover-opacity);
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+
+.overview-card:hover::after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-hover-opacity);
+  border-radius: .5rem;
+}
+
+@media (min-width: 38rem) { // 608px
+  .ov-grid-item__inner:nth-child(3) {
+    font-size: 2.5rem;
+  }
+}

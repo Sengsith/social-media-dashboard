@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+.dark-theme {
+  --clr-primary-bg: #{$clr-dark-bg};
+  --clr-body: #{$clr-dark-text};
+  --clr-toggle-bg: #{$gradient-theme-dark};
+  --clr-circle: #{$clr-dark-bg};
+  --clr-headers: #{$clr-dark-headers};
+  --clr-topbg: #{$clr-dark-topbg};
+  --clr-card-bg: #{$clr-dark-cardbg};
+  --clr-hover-opacity: #{$clr-dark-hover};
+}
+
+.light-theme {
+  --clr-primary-bg: #{$clr-light-bg};
+  --clr-body: #{$clr-light-text};
+  --clr-toggle-bg: #{$clr-theme-light};
+  --clr-circle: #{$clr-light-bg};
+  --clr-headers: #{$clr-light-headers};
+  --clr-topbg: #{$clr-light-topbg};
+  --clr-card-bg: #{$clr-light-cardbg};
+  --clr-hover-opacity: #{$clr-light-hover};
+}

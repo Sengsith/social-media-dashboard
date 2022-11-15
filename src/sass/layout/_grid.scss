@@ -1,0 +1,69 @@
+.top-grid {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+  "one"
+  "two"
+  "three"
+  "four";
+  place-content: center;
+  gap: 1.5rem;
+}
+.grid-item:nth-child(1) {
+  grid-area: one;
+}
+.grid-item:nth-child(2) {
+  grid-area: two;
+}
+.grid-item:nth-child(3) {
+  grid-area: three;
+}
+.grid-item:nth-child(4) {
+  grid-area: four;
+}
+
+.overview-grid {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+  "one"
+  "two"
+  "three"
+  "four"
+  "five"
+  "six"
+  "seven"
+  "eight";
+  place-content: center;
+  gap: 1.5rem;
+}
+
+
+@media (min-width: 38rem) { // 608px
+  .top-grid {
+    grid-template-areas:
+    "one two"
+    "three four";
+  }
+
+  .overview-grid {
+    grid-template-areas:
+    "one two"
+    "three four"
+    "five six"
+    "seven eight";
+  }
+}
+
+@media (min-width: 54rem) { // 864px
+  .top-grid {
+    grid-template-areas:
+    "one two three four";
+  }
+
+  .overview-grid {
+    grid-template-areas:
+    "one two three four"
+    "five sex seven eight";
+  }
+}
